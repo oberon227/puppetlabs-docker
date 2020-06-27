@@ -138,7 +138,7 @@ class docker::params {
           }
         }
         default: {
-          $package_release            = "debian-${facts['os']['distro']['codename']}"
+          $package_release            = "debian-${::lsbdistcodename}"
           $service_provider           = 'systemd'
           $storage_config             = '/etc/default/docker-storage'
           $service_config_template    = 'docker/etc/sysconfig/docker.systemd.erb'
